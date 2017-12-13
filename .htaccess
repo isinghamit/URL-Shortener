@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteRule ^encrypted.php - [L,NC] 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/\.]+)/?$ url.php?url=$1 [L]
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^/?json/urls\.json$ - [F,L]
+
